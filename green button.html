@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Bubble Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .gradient-button {
+            background: linear-gradient(45deg, #32CD32, #228B22);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 128, 0, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+        }
+
+        .gradient-button:hover {
+            box-shadow: 0 12px 20px rgba(0, 128, 0, 0.6);
+        }
+
+        .gradient-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 6px 10px rgba(0, 128, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <button class="gradient-button" onclick="buttonClick()">Click Me!</button>
+
+    <script>
+        function buttonClick() {
+            console.log("Button clicked!");
+        }
+    </script>
+</body>
+</html>
