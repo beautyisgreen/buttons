@@ -1,0 +1,42 @@
+<div class="form-group">
+    <label for="taste">Taste:</label>
+    <div id="taste">
+        <label><input type="checkbox" class="taste-checkbox" value="sweet"> Sweet</label>
+        <input type="range" id="sweet-potency" class="potency-slider" value="0" min="0" max="100" disabled>
+        <span id="sweet-value">0</span><br>
+
+        <label><input type="checkbox" class="taste-checkbox" value="salty"> Salty</label>
+        <input type="range" id="salty-potency" class="potency-slider" value="0" min="0" max="100" disabled>
+        <span id="salty-value">0</span><br>
+
+        <label><input type="checkbox" class="taste-checkbox" value="sour"> Sour</label>
+        <input type="range" id="sour-potency" class="potency-slider" value="0" min="0" max="100" disabled>
+        <span id="sour-value">0</span><br>
+
+        <label><input type="checkbox" class="taste-checkbox" value="bitter"> Bitter</label>
+        <input type="range" id="bitter-potency" class="potency-slider" value="0" min="0" max="100" disabled>
+        <span id="bitter-value">0</span><br>
+
+        <label><input type="checkbox" class="taste-checkbox" value="umami"> Umami/Savory</label>
+        <input type="range" id="umami-potency" class="potency-slider" value="0" min="0" max="100" disabled>
+        <span id="umami-value">0</span><br>
+    </div>
+</div>
+
+<script>
+    const tasteCheckboxes = document.querySelectorAll('.taste-checkbox');
+    tasteCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            const slider = document.getElementById(`${this.value}-potency`);
+            slider.disabled = !this.checked;
+        });
+    });
+
+    const potencySliders = document.querySelectorAll('.potency-slider');
+    potencySliders.forEach(slider => {
+        slider.addEventListener('input', function () {
+            const valueDisplay = document.getElementById(`${this.id.split('-')[0]}-value`);
+            valueDisplay.textContent = this.value;
+        });
+    });
+</script>
